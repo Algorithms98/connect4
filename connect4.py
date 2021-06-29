@@ -6,7 +6,7 @@ class Connect4:
         self.row = 6
         self.col = 7
         self.currentPlayer = 1  # initialized to player 1
-        self.isValid = true
+        self.isValid = True
         self.pieces = []
         self.isPlaying
         self.boardArray = [['' for i in range(col)] for j in range(row)]
