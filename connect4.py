@@ -4,7 +4,7 @@ class Connect4:
 
         self.row = 6
         self.col = 7
-        self.currentPlayer = 'X'  # initialized to player 1
+        self.currentPlayer = 'X'  # initialized to player X
         self.isOver = False
         self.boardArray = [
             ['-' for i in range(self.col)] for j in range(self.row)]
