@@ -37,7 +37,7 @@ class Connect4:
         if self.currentPlayer == 'X':
             self.currentPlayer = 'O'
         else:
-            self.currentPlayer == 'X'
+            self.currentPlayer = 'X'
 
         return self.currentPlayer
 
