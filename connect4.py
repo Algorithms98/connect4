@@ -2,12 +2,9 @@ class Connect4:
 
     def __init__(self):
 
-        self.moveCounter = 0
         self.row = 6
         self.col = 7
         self.currentPlayer = 'X'  # initialized to player 1
-        self.isValid = True
-        self.pieces = []
         self.isOver = False
         self.boardArray = [
             ['-' for i in range(self.col)] for j in range(self.row)]
