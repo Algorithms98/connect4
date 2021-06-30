@@ -1,6 +1,10 @@
 from connect4 import *
 
+
 def main():
-    
-    if __name__ == "__main__":
-        main()
+    connect4 = Connect4()
+    connect4.printBoard()
+
+
+if __name__ == "__main__":
+    main()
