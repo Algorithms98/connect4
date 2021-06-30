@@ -57,7 +57,7 @@ class Connect4:
         return self.currentPlayer
 
     def findEmptyRow(self, inputCol):
-        for i in range(self.row):
+        for i in range(self.row - 1, -1, -1):
             #rows = 6
             if self.boardArray[i][inputCol-1] == '-':
                 return i
