@@ -36,11 +36,16 @@ class Connect4:
             inputCol)][inputCol-1] = self.currentPlayer
 
     def placeMove(self):
-        userCol = int(input("Enter a column to place piece in: "))
-        while (userCol < 1 or userCol > 7) or self.findEmptyRow(userCol) == -1:
-            print("Invalid input. Try again.")
-            userCol = int(input("Enter a column to place piece in: "))
-        self.updateBoard(userCol)
+        while True:
+            userCol = input("Enter a column to place piece in: ")
+            if not userCol.isnumeric():
+                print("Invalid input. Try again.")
+            else:
+                if (int(userCol) < 1 or int(userCol) > 7) or self.findEmptyRow(int(userCol)) == -1:
+                    print("Invalid input. Try again.")
+                    continue
+                self.updateBoard(int(userCol))
+                break
 
     def switchPlayers(self):
 
