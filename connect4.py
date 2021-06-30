@@ -16,12 +16,20 @@ class Connect4:
         print("Welcome to Connect 4! Let's get started!")
 
     def printBoard(self):
-        pass
+        print("\n")
+        for row in self.boardArray:
+            print(" ".join(row))
+        print("\n")
 
     def updateBoard(self):
         pass
 
     def placeMove(self):
+        userCol = input("Enter a column to place piece in: ")
+        while (not userCol.isnumeric()) or (userCol < 1 or userCol > 7):
+            print("Invalid input. Try again.")
+            userCol = input("Enter a column to place piece in: ")
+
         self.boardArray[self.row][self.col] = self.currentPlayer
 
     def switchPlayers(self):
@@ -40,7 +48,7 @@ class Connect4:
                 return i
 
     def checkWinner(self):
-        if verticalCheck(self.boardArray, self.currentPlayer) or horizontalCheck(self.boardArray, self.currentPlayer) or negativeDiagnonalCheck(self.boardArray, self.currentPlayer) or positiveDiagonalCheck(self.boardArray, self.currentPlayer):
+        if self.verticalCheck() or self.horizontalCheck() or self.negativeDiagnonalCheck() or self.positiveDiagonalCheck():
             return True
         return False
 
