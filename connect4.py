@@ -37,7 +37,8 @@ class Connect4:
 
     def placeMove(self):
         while True:
-            userCol = input("Enter a column to place piece in: ")
+            userCol = input(
+                f"Player {self.currentPlayer}, enter a column to place piece in: ")
             if not userCol.isnumeric():
                 print("Invalid input. Try again.")
             else:
