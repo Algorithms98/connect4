@@ -4,7 +4,7 @@ class Connect4:
 
         self.row = 6
         self.col = 7
-        self.currentPlayer = 'X'  # initialized to player X
+        self.currentPlayer = 'x'  # initialized to player X
         self.isOver = False
         self.boardArray = [
             ['-' for i in range(self.col)] for j in range(self.row)]
@@ -50,10 +50,10 @@ class Connect4:
 
     def switchPlayers(self):
 
-        if self.currentPlayer == 'X':
-            self.currentPlayer = 'O'
+        if self.currentPlayer == 'x':
+            self.currentPlayer = 'o'
         else:
-            self.currentPlayer = 'X'
+            self.currentPlayer = 'x'
 
         return self.currentPlayer
 
@@ -90,6 +90,10 @@ class Connect4:
         for i in range(self.col):
             for j in range(self.row-3):
                 if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j+1][i] == self.currentPlayer and self.boardArray[j+2][i] == self.currentPlayer and self.boardArray[j+3][i] == self.currentPlayer:
+                    self.boardArray[j][i] = self.boardArray[j][i].upper()
+                    self.boardArray[j+1][i] = self.boardArray[j+1][i].upper()
+                    self.boardArray[j+2][i] = self.boardArray[j+2][i].upper()
+                    self.boardArray[j+3][i] = self.boardArray[j+3][i].upper()
                     return True
         return False
 
@@ -97,6 +101,10 @@ class Connect4:
         for i in range(self.col-3):
             for j in range(self.row):
                 if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j][i+1] == self.currentPlayer and self.boardArray[j][i+2] == self.currentPlayer and self.boardArray[j][i+3] == self.currentPlayer:
+                    self.boardArray[j][i] = self.boardArray[j][i].upper()
+                    self.boardArray[j+1][i] = self.boardArray[j+1][i].upper()
+                    self.boardArray[j+2][i] = self.boardArray[j+2][i].upper()
+                    self.boardArray[j+3][i] = self.boardArray[j+3][i].upper()
                     return True
         return False
 
@@ -104,6 +112,10 @@ class Connect4:
         for i in range(self.col-3):
             for j in range(3, self.row):
                 if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j-1][i+1] == self.currentPlayer and self.boardArray[j-2][i+2] == self.currentPlayer and self.boardArray[j-3][i+3] == self.currentPlayer:
+                    self.boardArray[j][i] = self.boardArray[j][i].upper()
+                    self.boardArray[j+1][i] = self.boardArray[j+1][i].upper()
+                    self.boardArray[j+2][i] = self.boardArray[j+2][i].upper()
+                    self.boardArray[j+3][i] = self.boardArray[j+3][i].upper()
                     return True
         return False
 
@@ -111,5 +123,9 @@ class Connect4:
         for i in range(self.col-3):
             for j in range(self.row-3):
                 if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j+1][i+1] == self.currentPlayer and self.boardArray[j+2][i+2] == self.currentPlayer and self.boardArray[j+3][i+3] == self.currentPlayer:
+                    self.boardArray[j][i] = self.boardArray[j][i].upper()
+                    self.boardArray[j+1][i] = self.boardArray[j+1][i].upper()
+                    self.boardArray[j+2][i] = self.boardArray[j+2][i].upper()
+                    self.boardArray[j+3][i] = self.boardArray[j+3][i].upper()
                     return True
         return False
