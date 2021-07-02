@@ -75,7 +75,7 @@ class Connect4:
         legal_moves = []
 
         for i in range(self.col):
-            if self.boardArray[self.row-1][i] == '-':
+            if self.boardArray[0][i] == '-':
                 legal_moves.append(i)
         return legal_moves
 
