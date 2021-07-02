@@ -96,20 +96,20 @@ class Connect4:
     def horizontalCheck(self):
         for i in range(self.col-3):
             for j in range(self.row):
-                if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j][i+1] == self.currentPlayer and self.boardArray[j][i+2] == self.currentPlayer and self.boardArray[j][j+3] == self.currentPlayer:
+                if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j][i+1] == self.currentPlayer and self.boardArray[j][i+2] == self.currentPlayer and self.boardArray[j][i+3] == self.currentPlayer:
                     return True
         return False
 
     def negativeDiagnonalCheck(self):
         for i in range(self.col-3):
             for j in range(3, self.row):
-                if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j-1][i+1] == self.currentPlayer and self.boardArray[j-2][i+2] == self.currentPlayer and self.boardArray[j-3][j+3] == self.currentPlayer:
+                if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j-1][i+1] == self.currentPlayer and self.boardArray[j-2][i+2] == self.currentPlayer and self.boardArray[j-3][i+3] == self.currentPlayer:
                     return True
         return False
 
     def positiveDiagonalCheck(self):
         for i in range(self.col-3):
             for j in range(self.row-3):
-                if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j+1][i+1] == self.currentPlayer and self.boardArray[j+2][i+2] == self.currentPlayer and self.boardArray[j+3][j+3] == self.currentPlayer:
+                if self.boardArray[j][i] == self.currentPlayer and self.boardArray[j+1][i+1] == self.currentPlayer and self.boardArray[j+2][i+2] == self.currentPlayer and self.boardArray[j+3][i+3] == self.currentPlayer:
                     return True
         return False
